@@ -1,0 +1,36 @@
+<effectgroup description="" id="RETRO TV EFFECT CRT  by MONXYO " parentIn="499">
+ <description/>
+ <effect id="frei0r.pixeliz0r">
+  <property name="BlockSizeY">499=0.004</property>
+  <property name="BlockSizeX">499=0.002</property>
+ </effect>
+ <effect id="avfilter.eq">
+  <property name="av.gamma_weight">1</property>
+  <property name="av.gamma_g">1</property>
+  <property name="av.gamma_b">1</property>
+  <property name="av.gamma_r">1</property>
+  <property name="av.gamma">1.21212</property>
+  <property name="av.saturation">1.61616</property>
+  <property name="av.brightness">0.113043</property>
+  <property name="av.contrast">1.25</property>
+ </effect>
+ <effect id="avfilter.drawgrid">
+  <property name="av.replace ">0</property>
+  <property name="av.t">499=4</property>
+  <property name="av.color">0x4747477d</property>
+  <property name="av.h">499=8</property>
+  <property name="av.w">499=0</property>
+  <property name="av.y">499=0</property>
+  <property name="av.x">499=0</property>
+ </effect>
+ <effect id="avfilter.lenscorrection">
+  <property name="av.k1">0.13</property>
+  <property name="av.cy">0.53</property>
+  <property name="av.k2">-0.02</property>
+  <property name="av.cx">0.5</property>
+ </effect>
+ <effect id="frei0r.rgbsplit0r">
+  <property name="1">499=0.448819</property>
+  <property name="0">499=0.446194</property>
+ </effect>
+</effectgroup>
