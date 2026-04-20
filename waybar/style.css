@@ -1,0 +1,66 @@
+* {
+    border: none;
+    border-radius: 6px;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 12px;
+    padding: 0 4px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/*
+.modules-left, .modules-center, .modules-right {
+    margin: 0;
+}
+*/
+
+/* Островки */
+#workspaces, #tray, #clock, #language, #pulseaudio, #backlight, 
+#network, #bluetooth, #cpu, #temperature, #memory, #battery {
+    background: #45304e;
+    border: 1px solid #82499a;
+    color: #c9a8d7; 
+}
+
+/* Hover */
+/*
+#workspaces:hover, #tray:hover, #clock:hover, #language:hover, 
+#pulseaudio:hover, #backlight:hover, #network:hover, #bluetooth:hover, 
+#cpu:hover, #memory:hover, #temperature:hover, #battery:hover {
+    background: #4b3b53;
+    border-color: #361c42;
+    margin-top: 2px;
+}
+*/
+
+/* Кубики рабочих пространств */
+#workspaces button {
+    padding: 0;
+    margin: 2px;
+    border-radius: 6px;
+    color: #cdd6f4;
+    background: transparent;
+}
+
+#workspaces button:hover {
+    background: #4a2c57;
+    box-shadow: 0 2px 8px #73418855;
+}
+
+#workspaces button.active {
+    background: linear-gradient(145deg, #734188, #82499a);
+    color: #1e1e2e;
+    border: 2px solid #82499a;
+}
+
+/* Батарея */
+#battery { min-width: 20px; }
+#battery.charging { color: #89b4fa;}
+#battery.warning:not( .charging ) { color: #f9e2af; }
+#battery.critical:not( .charging ) { color: #f38ba8; }
+
+/* Разное */
+#clock { font-weight: bold; font-size: 16px; min-width: 80px; }
+#language { min-width: 48px; font-size: 16px; }

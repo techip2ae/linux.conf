@@ -1,0 +1,131 @@
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    background-color: transparent;
+    color: #cdd6f4;
+    border-width: 0px;
+    border-color: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+window {
+    background-color: transparent;
+    border-width: 0px;
+    border-radius: 6px;
+    location: center;
+    anchor: center;
+    width: 600px;
+}
+
+mainbox {
+    background-color: #45304e;
+    border-width: 1px;
+    border-color: #82499a;
+    border-radius: 6px;
+    padding: 10px;
+    spacing: 10px;
+    children: [ inputbar, listview, mode-switcher ];
+}
+
+inputbar {
+    background-color: #4b3b53;
+    border-width: 1px;
+    border-color: #361c42;
+    border-radius: 6px;
+    padding: 8px;
+    spacing: 10px;
+    children: [ entry ];
+}
+
+entry {
+    background-color: transparent;
+    border-width: 0px;
+    padding: 4px;
+    color: #c9a8d7;
+    placeholder-color: #6c5a75;
+}
+
+listview {
+    background-color: transparent;
+    border-width: 0px;
+    border-radius: 6px;
+    padding: 0px;
+    spacing: 4px;
+    lines: 8;
+    columns: 1;
+}
+
+element {
+    background-color: transparent;
+    border-width: 0px;
+    border-radius: 6px;
+    padding: 6px 10px;
+    spacing: 10px;
+}
+
+element-text {
+    background-color: transparent;
+    border-width: 0px;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+    color: #cdd6f4;
+}
+
+element-icon {
+    background-color: transparent;
+    border-width: 0px;
+    size: 20px;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+    margin: 0px 10px 0px 0px;
+}
+
+element selected {
+    background-color: #734188;
+    border-width: 2px;
+    border-color: #82499a;
+}
+
+element selected element-text {
+    color: #1e1e2e;
+    font-weight: bold;
+}
+
+element urgent {
+    background-color: #45304e;
+    border-width: 1px;
+    border-color: #f38ba8;
+}
+
+element urgent element-text {
+    color: #f38ba8;
+}
+
+mode-switcher {
+    background-color: transparent;
+    border-width: 0px;
+    border-top-width: 1px;
+    border-top-color: #361c42;
+    padding: 8px 0px 0px 0px;
+    spacing: 10px;
+}
+
+button {
+    background-color: #4b3b53;
+    border-width: 1px;
+    border-color: #361c42;
+    border-radius: 6px;
+    padding: 4px 12px;
+    color: #c9a8d7;
+}
+
+button selected {
+    background-color: #734188;
+    border-width: 2px;
+    border-color: #82499a;
+    border-radius: 6px;
+    color: #1e1e2e;
+    font-weight: bold;
+}

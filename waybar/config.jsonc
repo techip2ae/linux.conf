@@ -1,0 +1,144 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 14,
+    "spacing": 2,
+    "modules-left": ["hyprland/workspaces", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        //"hyprland/language",
+        "pulseaudio",
+        "backlight",
+        "network",
+        "memory",
+        //"temperature",
+        "cpu",
+        "battery"
+    ],
+
+    // Рабочие пространства как кубики
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "󰍹 ",
+            "default": "󰔈 "
+        }
+    },
+
+    // Часы с календарем
+    "clock": {
+        "interval": 1,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%H:%M}",
+        "format": "{:%H:%M:%S}"
+    },
+
+    // Раскладка клавиатуры (fi/ru)
+    "hyprland/language": {
+        "format": "{short}",
+        "format-icons": {
+            "fi": "🇫🇮",
+            "ru": "🇷🇺"
+        }
+    },
+
+    // Звук и микрофон
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "muted": "󰝟",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "format-bluetooth": "󰓜 {volume}%",
+        "format-source": "{volume}%",
+        "format-source-muted": "󰝟"
+    },
+
+    // Яркость
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠", "󰃡", "󰃢"]
+    },
+
+    // Сеть
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) 󰖩",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "format-linked": "{ifname} (No IP) 󰈀",
+        "format-disconnected": "󰖪 Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "on-click": "foot -e nmtui",
+        //"on-click": "kitty -e nmtui",
+        //"on-click": "nm-connection-editor",
+        "format-icons": {
+            "wifi": "󰖩",
+            "ethernet": "󰈀"
+        }
+    },
+    
+    // Bluetooth
+    "bluetooth": {
+    "format": "{icon} {num_connections}",
+    "format-icons": {
+        "disabled": "󰂙",
+        "enabled": "󰂔",
+        "connected": "󰂓"
+    },
+    "format-connected": "󰂓 {num_connections} подключено",
+    "tooltip-format": "{controller_alias} {controller_address}",
+    "on-click": "rofi-bluetooth"
+    },
+
+
+    // CPU
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "tooltip": false,
+        "hwmon-path": "/sys/class/hwmon/hwmon0/temp_1",
+        "thermal-zone": 0, 
+        "format-icons": ["󰘚", "󰍛", "󰈸"]
+    },
+
+    // Температура
+    "temperature": {
+        "interval": 5,
+        "format": "{temperature}°C",
+        "critical-threshold": 80
+    },
+
+    // ОЗУ
+    "memory": {
+        "format": "󰘚 {}%"
+    },
+
+    // Tray
+    "tray": {
+        "spacing": 10
+    },
+
+    // Батарея - НОВЫЙ МОДУЛЬ
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰂄",
+        "format-alt": "{icon} {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"],
+        "tooltip": false
+    }
+}
+
