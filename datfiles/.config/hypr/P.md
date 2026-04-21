@@ -1,3 +1,13 @@
+
+# BEGINING 
+
+> Для применения конфигов  
+> `mv ~/linux.conf/dotfiles`
+> `stow -t ~ --adopt .`
+
+
+
+
 # Programs 
 
 File m:         `sudo pacman -S yazi` 
