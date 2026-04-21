@@ -1,0 +1,1244 @@
+{
+    "allDockWidgets": [
+        {
+            "lastCloseReason": 0,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 169,
+                    "width": 528,
+                    "x": 5,
+                    "y": 328
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 8,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "timeline"
+        },
+        {
+            "lastCloseReason": 2,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 6,
+                    "width": 0,
+                    "x": 1,
+                    "y": 30
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 5,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "project_bin"
+        },
+        {
+            "lastCloseReason": 1,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 5,
+                    "width": 1,
+                    "x": 1,
+                    "y": 31
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 3,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": true
+            },
+            "uniqueName": "library"
+        },
+        {
+            "lastCloseReason": 1,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 4,
+                    "width": 0,
+                    "x": 2,
+                    "y": 31
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 14,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": true
+            },
+            "uniqueName": "subtitles"
+        },
+        {
+            "lastCloseReason": 1,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 5,
+                    "width": 0,
+                    "x": 1,
+                    "y": 29
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 4,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": true
+            },
+            "uniqueName": "textedit"
+        },
+        {
+            "lastCloseReason": 1,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 3,
+                    "width": 0,
+                    "x": 2,
+                    "y": 33
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 14,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": true
+            },
+            "uniqueName": "timeremap"
+        },
+        {
+            "lastCloseReason": 2,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 2,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 2,
+                "wasFloating": false
+            },
+            "uniqueName": "markers"
+        },
+        {
+            "lastCloseReason": 1,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 0,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "screengrab"
+        },
+        {
+            "lastCloseReason": 2,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 1,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "audiospectrum"
+        },
+        {
+            "lastCloseReason": 2,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 6,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "clipmonitor"
+        },
+        {
+            "lastCloseReason": 2,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 6,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 1,
+                "wasFloating": false
+            },
+            "uniqueName": "projectmonitor"
+        },
+        {
+            "lastCloseReason": 8,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 5,
+                    "width": 1,
+                    "x": 1,
+                    "y": 29
+                },
+                "lastOverlayedGeometries": [
+                    [
+                        2,
+                        {
+                            "height": 955,
+                            "width": 300,
+                            "x": 1588,
+                            "y": 0
+                        }
+                    ]
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 17,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "clip_properties"
+        },
+        {
+            "lastCloseReason": 1,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 5,
+                    "width": 0,
+                    "x": 2,
+                    "y": 28
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 4,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": true
+            },
+            "uniqueName": "notes_widget"
+        },
+        {
+            "lastCloseReason": 1,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 6,
+                    "width": 0,
+                    "x": 1,
+                    "y": 30
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 5,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": true
+            },
+            "uniqueName": "media_browser"
+        },
+        {
+            "lastCloseReason": 2,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 13,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "onlineresources"
+        },
+        {
+            "lastCloseReason": 1,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 454,
+                    "width": 166,
+                    "x": 464,
+                    "y": 103
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 7,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": true
+            },
+            "uniqueName": "effect_stack"
+        },
+        {
+            "lastCloseReason": 1,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 441,
+                    "width": 165,
+                    "x": 223,
+                    "y": 223
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 7,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "effect_list"
+        },
+        {
+            "lastCloseReason": 8,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                    [
+                        2,
+                        {
+                            "height": 955,
+                            "width": 372,
+                            "x": 1516,
+                            "y": 0
+                        }
+                    ]
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 16,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "transition_list"
+        },
+        {
+            "lastCloseReason": 2,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 6,
+                    "width": 0,
+                    "x": 1,
+                    "y": 24
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 2,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 4,
+                "wasFloating": false
+            },
+            "uniqueName": "undo_history"
+        },
+        {
+            "lastCloseReason": 8,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 107,
+                    "width": 78,
+                    "x": 4,
+                    "y": 33
+                },
+                "lastOverlayedGeometries": [
+                    [
+                        4,
+                        {
+                            "height": 300,
+                            "width": 1918,
+                            "x": 1,
+                            "y": 621
+                        }
+                    ],
+                    [
+                        2,
+                        {
+                            "height": 955,
+                            "width": 566,
+                            "x": 1322,
+                            "y": 0
+                        }
+                    ]
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 15,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "mixer"
+        },
+        {
+            "lastCloseReason": 2,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 10,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "vectorscope"
+        },
+        {
+            "lastCloseReason": 2,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 9,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "waveform"
+        },
+        {
+            "lastCloseReason": 1,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 11,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "rgb_parade"
+        },
+        {
+            "lastCloseReason": 2,
+            "lastPosition": {
+                "lastFloatingGeometry": {
+                    "height": 0,
+                    "width": 0,
+                    "x": 0,
+                    "y": 0
+                },
+                "lastOverlayedGeometries": [
+                ],
+                "placeholders": [
+                    {
+                        "isFloatingWindow": false,
+                        "itemIndex": 12,
+                        "mainWindowUniqueName": "KdenliveKDDock"
+                    }
+                ],
+                "tabIndex": 0,
+                "wasFloating": false
+            },
+            "uniqueName": "histogram"
+        }
+    ],
+    "closedDockWidgets": [
+        "library",
+        "subtitles",
+        "textedit",
+        "timeremap",
+        "markers",
+        "screengrab",
+        "audiospectrum",
+        "clipmonitor",
+        "clip_properties",
+        "notes_widget",
+        "media_browser",
+        "onlineresources",
+        "effect_list",
+        "transition_list",
+        "undo_history",
+        "mixer",
+        "vectorscope",
+        "waveform",
+        "rgb_parade",
+        "histogram"
+    ],
+    "floatingWindows": [
+    ],
+    "kdenliveInfo": [
+        {
+            "displayName": "1",
+            "layoutVersion": 1,
+            "vertical": false
+        }
+    ],
+    "mainWindows": [
+        {
+            "affinities": null,
+            "geometry": {
+                "height": 1009,
+                "width": 1920,
+                "x": 0,
+                "y": 23
+            },
+            "isVisible": true,
+            "multiSplitterLayout": {
+                "frames": {
+                    "4000": {
+                        "currentTabIndex": 0,
+                        "dockWidgets": [
+                            "projectmonitor",
+                            "clipmonitor"
+                        ],
+                        "geometry": {
+                            "height": 582,
+                            "width": 1062,
+                            "x": 343,
+                            "y": 0
+                        },
+                        "id": "4000",
+                        "isNull": false,
+                        "mainWindowUniqueName": "KdenliveKDDock",
+                        "objectName": "projectmonitor",
+                        "options": 0
+                    },
+                    "4062": {
+                        "currentTabIndex": 0,
+                        "dockWidgets": [
+                            "effect_stack",
+                            "effect_list"
+                        ],
+                        "geometry": {
+                            "height": 582,
+                            "width": 483,
+                            "x": 1405,
+                            "y": 0
+                        },
+                        "id": "4062",
+                        "isNull": false,
+                        "mainWindowUniqueName": "KdenliveKDDock",
+                        "objectName": "effect_stack",
+                        "options": 0
+                    },
+                    "4124": {
+                        "currentTabIndex": 0,
+                        "dockWidgets": [
+                            "project_bin"
+                        ],
+                        "geometry": {
+                            "height": 582,
+                            "width": 343,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "id": "4124",
+                        "isNull": false,
+                        "mainWindowUniqueName": "KdenliveKDDock",
+                        "objectName": "project_bin",
+                        "options": 0
+                    },
+                    "4155": {
+                        "currentTabIndex": 0,
+                        "dockWidgets": [
+                            "timeline"
+                        ],
+                        "geometry": {
+                            "height": 373,
+                            "width": 1888,
+                            "x": 0,
+                            "y": 582
+                        },
+                        "id": "4155",
+                        "isNull": false,
+                        "mainWindowUniqueName": "KdenliveKDDock",
+                        "objectName": "timeline",
+                        "options": 0
+                    }
+                },
+                "layout": {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "isContainer": false,
+                                            "isVisible": false,
+                                            "sizingInfo": {
+                                                "geometry": {
+                                                    "height": 440,
+                                                    "width": 95,
+                                                    "x": 0,
+                                                    "y": 0
+                                                },
+                                                "maxSizeHint": {
+                                                    "height": 524287,
+                                                    "width": 524279
+                                                },
+                                                "minSize": {
+                                                    "height": 90,
+                                                    "width": 80
+                                                },
+                                                "percentageWithinParent": 0
+                                            }
+                                        },
+                                        {
+                                            "isContainer": false,
+                                            "isVisible": false,
+                                            "sizingInfo": {
+                                                "geometry": {
+                                                    "height": 440,
+                                                    "width": 103,
+                                                    "x": 0,
+                                                    "y": 0
+                                                },
+                                                "maxSizeHint": {
+                                                    "height": 524265,
+                                                    "width": 524270
+                                                },
+                                                "minSize": {
+                                                    "height": 90,
+                                                    "width": 80
+                                                },
+                                                "percentageWithinParent": 0
+                                            }
+                                        },
+                                        {
+                                            "isContainer": false,
+                                            "isVisible": false,
+                                            "sizingInfo": {
+                                                "geometry": {
+                                                    "height": 955,
+                                                    "width": 770,
+                                                    "x": 0,
+                                                    "y": 0
+                                                },
+                                                "maxSizeHint": {
+                                                    "height": 524321,
+                                                    "width": 524291
+                                                },
+                                                "minSize": {
+                                                    "height": 233,
+                                                    "width": 95
+                                                },
+                                                "percentageWithinParent": 0
+                                            }
+                                        },
+                                        {
+                                            "isContainer": false,
+                                            "isVisible": false,
+                                            "sizingInfo": {
+                                                "geometry": {
+                                                    "height": 570,
+                                                    "width": 972,
+                                                    "x": 284,
+                                                    "y": 0
+                                                },
+                                                "maxSizeHint": {
+                                                    "height": 524321,
+                                                    "width": 524291
+                                                },
+                                                "minSize": {
+                                                    "height": 234,
+                                                    "width": 324
+                                                },
+                                                "percentageWithinParent": 0
+                                            }
+                                        },
+                                        {
+                                            "children": [
+                                                {
+                                                    "isContainer": false,
+                                                    "isVisible": false,
+                                                    "sizingInfo": {
+                                                        "geometry": {
+                                                            "height": 476,
+                                                            "width": 1918,
+                                                            "x": 0,
+                                                            "y": 0
+                                                        },
+                                                        "maxSizeHint": {
+                                                            "height": 524315,
+                                                            "width": 524291
+                                                        },
+                                                        "minSize": {
+                                                            "height": 228,
+                                                            "width": 324
+                                                        },
+                                                        "percentageWithinParent": 0
+                                                    }
+                                                },
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "guestId": "4124",
+                                                            "isContainer": false,
+                                                            "isVisible": true,
+                                                            "sizingInfo": {
+                                                                "geometry": {
+                                                                    "height": 582,
+                                                                    "width": 343,
+                                                                    "x": 0,
+                                                                    "y": 0
+                                                                },
+                                                                "maxSizeHint": {
+                                                                    "height": 524321,
+                                                                    "width": 524287
+                                                                },
+                                                                "minSize": {
+                                                                    "height": 136,
+                                                                    "width": 80
+                                                                },
+                                                                "percentageWithinParent": 0.1816737288135593
+                                                            }
+                                                        },
+                                                        {
+                                                            "guestId": "4000",
+                                                            "isContainer": false,
+                                                            "isVisible": true,
+                                                            "sizingInfo": {
+                                                                "geometry": {
+                                                                    "height": 582,
+                                                                    "width": 1062,
+                                                                    "x": 343,
+                                                                    "y": 0
+                                                                },
+                                                                "maxSizeHint": {
+                                                                    "height": 524315,
+                                                                    "width": 524291
+                                                                },
+                                                                "minSize": {
+                                                                    "height": 228,
+                                                                    "width": 324
+                                                                },
+                                                                "percentageWithinParent": 0.5625
+                                                            }
+                                                        },
+                                                        {
+                                                            "guestId": "4062",
+                                                            "isContainer": false,
+                                                            "isVisible": true,
+                                                            "sizingInfo": {
+                                                                "geometry": {
+                                                                    "height": 582,
+                                                                    "width": 483,
+                                                                    "x": 1405,
+                                                                    "y": 0
+                                                                },
+                                                                "maxSizeHint": {
+                                                                    "height": 524315,
+                                                                    "width": 524323
+                                                                },
+                                                                "minSize": {
+                                                                    "height": 227,
+                                                                    "width": 127
+                                                                },
+                                                                "percentageWithinParent": 0.2558262711864407
+                                                            }
+                                                        }
+                                                    ],
+                                                    "isContainer": true,
+                                                    "isVisible": false,
+                                                    "orientation": 1,
+                                                    "sizingInfo": {
+                                                        "geometry": {
+                                                            "height": 582,
+                                                            "width": 1888,
+                                                            "x": 0,
+                                                            "y": 0
+                                                        },
+                                                        "maxSizeHint": {
+                                                            "height": 524315,
+                                                            "width": 1572901
+                                                        },
+                                                        "minSize": {
+                                                            "height": 228,
+                                                            "width": 531
+                                                        },
+                                                        "percentageWithinParent": 0.6103500761035008
+                                                    }
+                                                },
+                                                {
+                                                    "guestId": "4155",
+                                                    "isContainer": false,
+                                                    "isVisible": true,
+                                                    "sizingInfo": {
+                                                        "geometry": {
+                                                            "height": 373,
+                                                            "width": 1888,
+                                                            "x": 0,
+                                                            "y": 582
+                                                        },
+                                                        "maxSizeHint": {
+                                                            "height": 524296,
+                                                            "width": 524287
+                                                        },
+                                                        "minSize": {
+                                                            "height": 99,
+                                                            "width": 80
+                                                        },
+                                                        "percentageWithinParent": 0.3896499238964992
+                                                    }
+                                                }
+                                            ],
+                                            "isContainer": true,
+                                            "isVisible": false,
+                                            "orientation": 2,
+                                            "sizingInfo": {
+                                                "geometry": {
+                                                    "height": 955,
+                                                    "width": 1888,
+                                                    "x": 0,
+                                                    "y": 0
+                                                },
+                                                "maxSizeHint": {
+                                                    "height": 1048611,
+                                                    "width": 524287
+                                                },
+                                                "minSize": {
+                                                    "height": 327,
+                                                    "width": 531
+                                                },
+                                                "percentageWithinParent": 1
+                                            }
+                                        },
+                                        {
+                                            "isContainer": false,
+                                            "isVisible": false,
+                                            "sizingInfo": {
+                                                "geometry": {
+                                                    "height": 440,
+                                                    "width": 82,
+                                                    "x": 1832,
+                                                    "y": 0
+                                                },
+                                                "maxSizeHint": {
+                                                    "height": 524287,
+                                                    "width": 524287
+                                                },
+                                                "minSize": {
+                                                    "height": 90,
+                                                    "width": 80
+                                                },
+                                                "percentageWithinParent": 0
+                                            }
+                                        },
+                                        {
+                                            "isContainer": false,
+                                            "isVisible": false,
+                                            "sizingInfo": {
+                                                "geometry": {
+                                                    "height": 440,
+                                                    "width": 167,
+                                                    "x": 1747,
+                                                    "y": 0
+                                                },
+                                                "maxSizeHint": {
+                                                    "height": 524287,
+                                                    "width": 524251
+                                                },
+                                                "minSize": {
+                                                    "height": 90,
+                                                    "width": 80
+                                                },
+                                                "percentageWithinParent": 0
+                                            }
+                                        },
+                                        {
+                                            "isContainer": false,
+                                            "isVisible": false,
+                                            "sizingInfo": {
+                                                "geometry": {
+                                                    "height": 955,
+                                                    "width": 92,
+                                                    "x": 1796,
+                                                    "y": 0
+                                                },
+                                                "maxSizeHint": {
+                                                    "height": 524287,
+                                                    "width": 524287
+                                                },
+                                                "minSize": {
+                                                    "height": 90,
+                                                    "width": 80
+                                                },
+                                                "percentageWithinParent": 0
+                                            }
+                                        },
+                                        {
+                                            "isContainer": false,
+                                            "isVisible": false,
+                                            "sizingInfo": {
+                                                "geometry": {
+                                                    "height": 440,
+                                                    "width": 81,
+                                                    "x": 1833,
+                                                    "y": 0
+                                                },
+                                                "maxSizeHint": {
+                                                    "height": 524287,
+                                                    "width": 524287
+                                                },
+                                                "minSize": {
+                                                    "height": 90,
+                                                    "width": 80
+                                                },
+                                                "percentageWithinParent": 0
+                                            }
+                                        },
+                                        {
+                                            "isContainer": false,
+                                            "isVisible": false,
+                                            "sizingInfo": {
+                                                "geometry": {
+                                                    "height": 508,
+                                                    "width": 378,
+                                                    "x": 1536,
+                                                    "y": 0
+                                                },
+                                                "maxSizeHint": {
+                                                    "height": 524174,
+                                                    "width": 524011
+                                                },
+                                                "minSize": {
+                                                    "height": 90,
+                                                    "width": 80
+                                                },
+                                                "percentageWithinParent": 0
+                                            }
+                                        }
+                                    ],
+                                    "isContainer": true,
+                                    "isVisible": false,
+                                    "orientation": 1,
+                                    "sizingInfo": {
+                                        "geometry": {
+                                            "height": 955,
+                                            "width": 1888,
+                                            "x": 0,
+                                            "y": 0
+                                        },
+                                        "maxSizeHint": {
+                                            "height": 1048611,
+                                            "width": 524287
+                                        },
+                                        "minSize": {
+                                            "height": 327,
+                                            "width": 531
+                                        },
+                                        "percentageWithinParent": 1
+                                    }
+                                },
+                                {
+                                    "isContainer": false,
+                                    "isVisible": false,
+                                    "sizingInfo": {
+                                        "geometry": {
+                                            "height": 381,
+                                            "width": 1544,
+                                            "x": 0,
+                                            "y": 570
+                                        },
+                                        "maxSizeHint": {
+                                            "height": 524321,
+                                            "width": 524291
+                                        },
+                                        "minSize": {
+                                            "height": 218,
+                                            "width": 262
+                                        },
+                                        "percentageWithinParent": 0
+                                    }
+                                }
+                            ],
+                            "isContainer": true,
+                            "isVisible": false,
+                            "orientation": 2,
+                            "sizingInfo": {
+                                "geometry": {
+                                    "height": 955,
+                                    "width": 1888,
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                "maxSizeHint": {
+                                    "height": 1048611,
+                                    "width": 524287
+                                },
+                                "minSize": {
+                                    "height": 327,
+                                    "width": 531
+                                },
+                                "percentageWithinParent": 1
+                            }
+                        },
+                        {
+                            "isContainer": false,
+                            "isVisible": false,
+                            "sizingInfo": {
+                                "geometry": {
+                                    "height": 955,
+                                    "width": 374,
+                                    "x": 1544,
+                                    "y": 0
+                                },
+                                "maxSizeHint": {
+                                    "height": 524193,
+                                    "width": 524145
+                                },
+                                "minSize": {
+                                    "height": 90,
+                                    "width": 80
+                                },
+                                "percentageWithinParent": 0
+                            }
+                        },
+                        {
+                            "isContainer": false,
+                            "isVisible": false,
+                            "sizingInfo": {
+                                "geometry": {
+                                    "height": 955,
+                                    "width": 473,
+                                    "x": 1415,
+                                    "y": 0
+                                },
+                                "maxSizeHint": {
+                                    "height": 524178,
+                                    "width": 524276
+                                },
+                                "minSize": {
+                                    "height": 90,
+                                    "width": 80
+                                },
+                                "percentageWithinParent": 0
+                            }
+                        },
+                        {
+                            "isContainer": false,
+                            "isVisible": false,
+                            "sizingInfo": {
+                                "geometry": {
+                                    "height": 955,
+                                    "width": 475,
+                                    "x": 1413,
+                                    "y": 0
+                                },
+                                "maxSizeHint": {
+                                    "height": 524287,
+                                    "width": 524180
+                                },
+                                "minSize": {
+                                    "height": 90,
+                                    "width": 80
+                                },
+                                "percentageWithinParent": 0
+                            }
+                        }
+                    ],
+                    "isContainer": true,
+                    "isVisible": false,
+                    "orientation": 1,
+                    "sizingInfo": {
+                        "geometry": {
+                            "height": 955,
+                            "width": 1888,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "maxSizeHint": {
+                            "height": 16777215,
+                            "width": 16777215
+                        },
+                        "minSize": {
+                            "height": 90,
+                            "width": 80
+                        },
+                        "percentageWithinParent": 0
+                    }
+                }
+            },
+            "normalGeometry": {
+                "height": 0,
+                "width": 0,
+                "x": 0,
+                "y": 0
+            },
+            "options": 0,
+            "screenIndex": 0,
+            "screenSize": {
+                "height": 1080,
+                "width": 1920
+            },
+            "sidebar-2": [
+                "mixer",
+                "transition_list",
+                "clip_properties"
+            ],
+            "uniqueName": "KdenliveKDDock",
+            "windowState": 2
+        }
+    ],
+    "screenInfo": [
+        {
+            "devicePixelRatio": 1,
+            "geometry": {
+                "height": 1080,
+                "width": 1920,
+                "x": 0,
+                "y": 0
+            },
+            "index": 0,
+            "name": "MSI MP243X"
+        }
+    ],
+    "serializationVersion": 3
+}
