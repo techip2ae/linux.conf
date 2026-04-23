@@ -47,8 +47,8 @@
     "hyprland/language": {
         "format": "{short}",
         "format-icons": {
-            "fi": "🇫🇮",
-            "ru": "🇷🇺"
+            "fi": "🇫",
+            "ru": "🇷"
         }
     },
 
@@ -65,7 +65,7 @@
         "format-source-muted": "󰝟"
     },
 
-    // Яркость
+    // Яркост
     "backlight": {
         "format": "{icon} {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃠", "󰃡", "󰃢"]
