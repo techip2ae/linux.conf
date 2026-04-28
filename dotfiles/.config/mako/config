@@ -1,0 +1,22 @@
+# Шрифт в формате Pango, можно любой установленный
+font=Source Code Pro 10
+
+# Формат текста уведомления
+format=<b>%a</b> %s
+background-color=#1d1f21
+text-color=#c5c8c6
+
+# Позиция и внешний вид
+anchor=bottom-right
+layer=overlay
+width=300
+height=80
+margin=10
+padding=10,10,14
+border-size = 1
+border-color = #373b41
+
+# Сортировка и таймауты
+sort=-time
+max-visible=3
+default-timeout=5000
