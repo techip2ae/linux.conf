@@ -5,95 +5,36 @@
 spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
 spawn-sh-at-startup "awww img ~/.wallpapers/bg0.jpg"
+
+// KILL F¤^½1'‰ PROGRAMM 
 spawn-sh-at-startup "pkill blueman-applet"
-
-//################//
-// INPUT SETTINGS //
-//################//
-
-input {
-    keyboard {
-        xkb {
-            layout "fi,ru"
-            options "grp:alt_shift_toggle"
-        }
-        numlock
-    }
-
-    touchpad {
-        // off
-        tap
-        dwt
-        dwtp
-        drag false
-        drag-lock
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-factor 1.0
-        // scroll-factor vertical=1.0 horizontal=-2.0
-        // scroll-method "two-finger"
-        // scroll-button 273
-        // scroll-button-lock
-        // tap-button-map "left-middle-right"
-        // click-method "clickfinger"
-        // left-handed
-        // disabled-on-external-mouse
-        // middle-emulation
-    }
-    focus-follows-mouse max-scroll-amount="40%"
-}
-
-
-//########//
-// LAYOUT //
-//########//
-
-layout {
-    gaps 8
-
-    center-focused-column "never"
-
-    preset-column-widths {
-        proportion 0.3
-        proportion 0.5
-        proportion 0.6
-    }
-
-    default-column-width { proportion 0.5; }
-
-    focus-ring {
-        off
-        width 4
-        active-color "#7fc8ff"
-        inactive-color "#505050"
-    }
-
-    border {
-        // off
-        width 4
-        active-color    "#82499a"
-        inactive-color  "#3a2144"
-        // urgent-color    "#9b0000"
-    }
-
-    shadow {
-        off
-        softness 30
-        spread 5
-        offset x=0 y=5
-        color "#0007"
-    }
-}
 
 
 //############//
 // WINDOWRULE //
 //############//
 
+// Все окна
+window-rule {
+    geometry-corner-radius 6
+    clip-to-geometry true
+}
+
+// Только неактивные окна
+window-rule {
+    match is-active=false
+    opacity 0.80
+}
+
+// Только для некоторых программ
 window-rule {
     match app-id=r#"^kitty$"#
     default-column-width {}
+}
+
+window-rule {
+    match app-id="firefox"
+    open-maximized true
 }
 
 window-rule {
@@ -101,17 +42,12 @@ window-rule {
     open-floating true
 }
 
-window-rule {
-    geometry-corner-radius 6
-    clip-to-geometry true
-}
-
-
 //#######//
 // BINDS //
 //#######//
 
 binds {
+
     Mod+minus { show-hotkey-overlay; }
 
     // Основные приложения
@@ -199,5 +135,110 @@ binds {
     "XF86MonBrightnessDown" { spawn "brightnessctl" "set" "5%-"; }
 }
 
+//########//
+// LAYOUT //
+//########//
 
+layout {
+    gaps 8
+
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 0.4
+        proportion 0.6
+        proportion 0.8
+    }
+
+    default-column-width { proportion 0.8; }
+
+    focus-ring {
+        // off
+        width 4
+        active-color "#82499a"
+        inactive-color "3a2144"
+    }
+
+    border {
+        off
+        width 4
+        active-color    "#82499a"
+        inactive-color  "#3a2144"
+        // urgent-color    "#9b0000"
+    }
+
+    shadow {
+        off
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+}
+
+//################//
+// INPUT SETTINGS //
+//################//
+
+input {
+
+    keyboard {
+        xkb {
+            layout "fi,ru"
+            options "grp:alt_shift_toggle"
+        }
+        numlock
+    }
+
+    touchpad {
+        // off
+        tap
+        dwt
+        dwtp
+        drag false
+        drag-lock
+        // natural-scroll
+        // accel-speed 0.2
+        // accel-profile "flat"
+        // scroll-factor 1.0
+        // scroll-factor vertical=1.0 horizontal=-2.0
+        // scroll-method "two-finger"
+        // scroll-button 273
+        // scroll-button-lock
+        // tap-button-map "left-middle-right"
+        // click-method "clickfinger"
+        // left-handed
+        // disabled-on-external-mouse
+        // middle-emulation
+    }
+    focus-follows-mouse max-scroll-amount="40%"
+}
+
+//##########//
+// OVERVIEW //
+//##########//
+
+overview {
+    zoom 0.45
+    backdrop-color "#291731"
+}
+
+//##########//
+// GESTURES //
+//##########//
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+//########//
+// Cursor //
+//########//
+
+cursor {
+    xcursor-theme "Moga-Neon-Purple"
+    xcursor-size 26
+}
 

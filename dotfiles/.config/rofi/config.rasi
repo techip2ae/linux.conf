@@ -1,3 +1,6 @@
 
+configuration {
+    run-command: "zsh -c '{cmd}'";
+}
 @theme "./theme.rasi"
 
