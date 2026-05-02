@@ -7,22 +7,6 @@
 
 
 
-# Programs 
-
-GNU file manager:   `sudo pacman -S thunar`
-TUI file manager:   `sudo pacman -S yazi` 
-gvim:               `sudo pacman -S gvim`
-louncher:           `sudo pacman -S rofi`
-bluetooth:          `sudo pacman -S bluez bluez-utils`
-clipboard:          `sudo pacman -S wl-clipboard cliphist wl-clip-persist wtype`
-notification        `sudo pacman -S mako`
-
-## Install theme tools
-`sudo pacman -S nwg-look kvantum qt6ct adwaita-theme catppuccin-gtk-theme-mocha kvantum-theme-catppuccin`
-
-# Yay
-install: 
-
 ```
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git

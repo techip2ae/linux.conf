@@ -6,7 +6,7 @@ spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
 spawn-sh-at-startup "awww img ~/.wallpapers/bg0.jpg"
 
-// KILL F¤^½1'‰ PROGRAMM 
+// KILL F¤^½1'‰ PROGRAM
 spawn-sh-at-startup "pkill blueman-applet"
 
 
@@ -57,16 +57,16 @@ binds {
 
     // Управление окнами
     Mod+Q repeat=false { close-window; }
-    Mod+W { toggle-overview; } 
+    Mod+W { toggle-overview; }
 
     // Навигация
-    Mod+H { focus-column-left; }
-    Mod+J { focus-workspace-down; }
-    Mod+K { focus-workspace-up; }
-    Mod+L { focus-column-right; }
+    Mod+H   { focus-column-left; }
+    Mod+J   { focus-workspace-down; }
+    Mod+K   { focus-workspace-up; }
+    Mod+L   { focus-column-right; }
+    // Mod+I   {  }
 
     // Перемещение окон
-    
     Mod+Shift+H { move-column-left; }
     Mod+Shift+K { move-column-to-workspace-up; }
     Mod+Shift+J { move-column-to-workspace-down; }
@@ -110,7 +110,7 @@ binds {
     Mod+F   { maximize-column; }
     F11     { fullscreen-window; }
     Mod+X   { toggle-window-floating; }
-    
+
     Mod+Shift+less { set-column-width "-10%"; }
     Mod+less { set-column-width "+10%"; }
 
@@ -241,4 +241,3 @@ cursor {
     xcursor-theme "Moga-Neon-Purple"
     xcursor-size 26
 }
-
