@@ -23,12 +23,12 @@ window-rule {
 // Только неактивные окна
 window-rule {
     match is-active=false
-    opacity 0.80
+    opacity 0.8
 }
 
 // Только для некоторых программ
 window-rule {
-    match app-id=r#"^kitty$"#
+    match app-id="kitty"
     default-column-width {}
 }
 
@@ -38,7 +38,8 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match title="Picture-in-Picture"
+    match app-id="firefox$"
     open-floating true
 }
 
@@ -64,7 +65,7 @@ binds {
     Mod+J   { focus-workspace-down; }
     Mod+K   { focus-workspace-up; }
     Mod+L   { focus-column-right; }
-    // Mod+I   {  }
+    Mod+I   {  switch-focus-between-floating-and-tiling; }
 
     // Перемещение окон
     Mod+Shift+H { move-column-left; }
