@@ -18,6 +18,7 @@ spawn-sh-at-startup "pkill blueman-applet"
 window-rule {
     geometry-corner-radius 6
     clip-to-geometry true
+    draw-border-with-background false
 }
 
 // Только неактивные окна
@@ -38,9 +39,9 @@ window-rule {
 }
 
 window-rule {
-    match title="Picture-in-Picture"
-    match app-id="firefox$"
+    match app-id="firefox" title="Picture-in-Picture"
     open-floating true
+    opacity 1.0
 }
 
 //#######//
@@ -143,7 +144,7 @@ binds {
 layout {
     gaps 8
 
-    center-focused-column "never"
+    center-focused-column "always"
 
     preset-column-widths {
         proportion 0.4
@@ -154,14 +155,14 @@ layout {
     default-column-width { proportion 0.8; }
 
     focus-ring {
-        // off
+        off
         width 4
         active-color "#82499a"
         inactive-color "3a2144"
     }
 
     border {
-        off
+        // off
         width 4
         active-color    "#82499a"
         inactive-color  "#3a2144"
@@ -185,7 +186,7 @@ input {
 
     keyboard {
         xkb {
-            layout "fi,ru"
+            layout "us,ru"
             options "grp:alt_shift_toggle"
         }
         numlock
