@@ -108,3 +108,7 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 
 # opencode
 export PATH=/home/techima/.opencode/bin:$PATH
+
+# ssh-agent
+eval "$(ssh-agent -s > /dev/null)"
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
