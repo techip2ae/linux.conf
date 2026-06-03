@@ -202,7 +202,7 @@ input {
 
     keyboard {
         xkb {
-            layout "fi,ru-fi"
+            layout "fi,ru"
             options "grp:alt_shift_toggle"
         }
         numlock
