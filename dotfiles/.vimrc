@@ -20,7 +20,7 @@ set tabstop=4                     " отображать таб как 4 про�
 set shiftwidth=4                  " ширина сдвига (>> <<) = 4
 set expandtab                     " преобразовывать табы в пробелы
 set smartindent                   " умные отступы для кода
-" set clipboard=unnamedplus         " использовать системный буфер обмена (+)
+set clipboard+=unnamedplus        " использовать системный буфер обмена (+)
 set mouse=a                       " включить мышь во всех режимах
 set nowrap                        " выключает перенос строк
 

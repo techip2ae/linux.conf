@@ -1,0 +1,648 @@
+# # Конфигурация driftwm
+
+# # Этот файл документирует все встроенные значения по умолчанию.
+# #
+# # Строка вида "# key = value" — это активное значение по умолчанию.
+# # Раскомментируйте её (удалите ведущий "# "), чтобы переопределить это значение.
+# # Строки, начинающиеся с "# #", являются описаниями и примерами, они никогда
+# # не становятся активной конфигурацией; значения под заголовком "# # Example:"
+# # являются иллюстративными альтернативами, а не значениями по умолчанию.
+# #
+# # Для настройки: скопируйте этот файл в ~/.config/driftwm/config.toml
+# # и отредактируйте только те строки, которые хотите изменить.
+# # Отсутствующие поля будут использовать встроенные значения по умолчанию.
+# # Для привязок клавиш используйте = "none", чтобы полностью удалить привязку по умолчанию.
+# # Проверьте конфигуляцию командой: driftwm --check-config
+
+# ## Общие настройки
+# # Клавиша-модификатор оконного менеджера: "super" (по умолчанию) или "alt"
+mod_key = "super"
+
+# # Навязчивый фокус (Sloppy focus): фокус клавиатуры следует за указателем мыши.
+# # Перемещение на пустое пространство сохраняет фокус; кликните по пустому пространству, чтобы снять фокус.
+# focus_follows_mouse = false
+
+# # Где появляются новые окна, если правило окна не задает их позицию:
+# #   "center"  — центр видимой области; камера анимируется к новому окну.
+# #   "cursor"  — центрируется относительно курсора (с ограничением по рабочей области
+# #               активного монитора); камера остается на месте, если не уменьшено масштабирование
+# #               и zoom.reset_on_new_window равно true.
+# #   "auto"    — автоматически размещается рядом с кластером сфокусированного окна:
+# #               пытается найти место у краев сфокусированного окна (по часовой стрелке, начиная с ближайшего
+# #               к центру видимой области), затем использует поиск в ширину (BFS) к соседям.
+# #               Возвращается к "center", если нет сфокусированного окна или не найдено valid размещение.
+window_placement = "auto"
+
+# # Команды для запуска при старте (после установки WAYLAND_DISPLAY).
+# # Каждая запись передается в sh -c, поэтому работает полный синтаксис оболочки (конвейеры, &&, переменные окружения).
+autostart = ["waybar"]
+# #
+# # Запуск driftwm как сеанса systemd (через driftwm-session или менеджер дисплея)
+# # также запускает элементы автозапуска XDG (~/.config/autostart, /etc/xdg/autostart)
+# # в дополнение к списку autostart выше. Чтобы отключить это:
+# #   systemctl --user mask xdg-desktop-autostart.target
+
+[env]
+# # Переменные окружения, устанавливаемые перед запуском любых клиентов.
+# # Дочерние процессы (autostart, exec-привязки) наследуют их.
+# # Они переопределяют встроенные значения по умолчанию для инструментов композитора
+# # (MOZ_ENABLE_WAYLAND, QT_QPA_PLATFORM, SDL_VIDEODRIVER, GDK_BACKEND, ELECTRON_OZONE_PLATFORM_HINT).
+# # Пример:
+# # QT_WAYLAND_DISABLE_WINDOWDECORATION = "1"
+# # MOZ_ENABLE_WAYLAND = "1"
+
+[input.keyboard]
+layout = "fi"              # Раскладка XKB (например, "us,ru" для нескольких раскладок)
+# remember_layout_per_window = false  # для настроек с несколькими раскладками
+# variant = ""               # Вариант XKB (например, "dvorak" или "," для двух вариантов по умолчанию)
+# options = ""               # Опции XKB (например, "grp:win_space_toggle" для переключения раскладки по Super+Space)
+                             #   grp:alt_shift_toggle/grp:ctrl_shift_toggle ломают эти комбинации клавиш — вместо них используйте tap-привязку (см. [keybindings])
+# model = ""                 # Модель клавиатуры XKB (например, "pc105")
+# repeat_rate = 25           # повторений в секунду
+# repeat_delay = 200         # мс до начала повтора
+# layout_independent = true  # сопоставлять привязки по физической позиции клавиши независимо от раскладки
+# num_lock = true            # состояние Num Lock при запуске
+# caps_lock = false          # состояние Caps Lock при запуске
+
+[input.trackpad]
+# tap_to_click = true         # включить нажатие для клика
+# natural_scroll = true       # инвертировать направление прокрутки (контент следует за пальцами)
+# tap_and_drag = true         # двойное касание с удержанием для перетаскивания
+# accel_speed = 0.0           # ускорение указателя (от -1.0 до 1.0)
+# accel_profile = "adaptive"  # "flat" (плоское) или "adaptive" (адаптивное)
+# click_method = "none"       # none = по умолчанию устройства; clickfinger = количество пальцев (1=левый, 2=правый, 3=средний); button_areas = зона на тачпаде
+# disable_while_typing = true  # игнорировать ввод с тачпада shortly после нажатия клавиши (защита от случайных касаний ладонью)
+
+[input.mouse]
+# accel_speed = 0.0           # ускорение указателя (от -1.0 до 1.0)
+# accel_profile = "flat"      # "flat" (плоское) или "adaptive" (адаптивное)
+# natural_scroll = false      # инвертировать направление прокрутки
+
+# [input.touch]
+# enable = true               # включить поддержку сенсорного экрана
+# map_to_output = "none"      # привязать сенсорный ввод к монитору по имени коннектора;
+                              # "none" (по умолчанию) автоматически определяет сенсорный экран по
+                              # физическому размеру + коннектору. Устанавливайте это только чтобы различать
+                              # два сенсорных экрана одинакового размера.
+# # Пример:
+# # map_to_output = "DP-2"
+
+[cursor]
+theme = "Moga-Neon-Purple"     # Тема курсора XCURSOR_THEME; "none" = наследовать из окружения (например, "Adwaita")
+size = 30                      # Размер курсора XCURSOR_SIZE; 0 = наследовать из окружения (например, 24)
+inactive_opacity = 1           # прозрачность курсора на неактивных мониторах (0.0–1.0)
+
+[navigation]
+trackpad_speed = 1.5        # множитель скорости панорамирования для тачпада (прокрутка/жесты)
+# mouse_speed = 1.0           # множитель скорости панорамирования для мыши (перетаскивание) (1.0 = напрямую)
+# touch_speed = 1.0           # множитель скорости панорами gestures для сенсорного экрана
+# drift = 0.5                 # инерция движения: 0 = выкл, 0.5 = по умолчанию, 1 = максимальная плавучесть
+# animation_speed = 0.3       # коэффициент линейной интерполяции камеры (чем выше, тем быстрее)
+# auto_navigate_on_close = true  # при закрытии окна панорамировать к новому сфокусированному окну, если оно за экраном
+                              # false = камера остается на месте; фокус переходит только на видимое окно
+# nudge_step = 20             # пикселей за одно действие сдвига окна (по умолчанию mod-shift-стрелки)
+# pan_step = 100.0            # пикселей за одно действие панорамирования вида (по умолчанию mod-ctrl-стрелки)
+# # Якоря: точки на холсте, обнаруживаемые по ближайшему центру (свайп 4 пальцами / Mod+Стрелки)
+# # даже если там нет окна. Используется система координат Y-up (Y направлена вверх).
+# anchors = [[0, 0]]
+# # Пример: 4 угла
+# # anchors = [[0, 0], [-1750, 1750], [1750, 1750], [1750, -1750], [-1750, -1750]]
+
+[navigation.edge_pan]
+# zone = 100.0                # ширина зоны активации (пиксели от края видимой области)
+# speed_min = 4.0             # пикселей/кадр на границе зоны
+# speed_max = 10.0            # пикселей/кадр у края видимой области
+# cursor_pan = false          # панорамирование, когда просто курсор касается края экрана
+                              # (не только во время перетаскивания). Переключатель: "toggle-cursor-pan".
+# cursor_zone = 20.0          # зона активации панорамирования курсором у края (пиксели) — сделана маленькой,
+                              # чтобы не срабатывать случайно.
+                              # Панорамирует с постоянной скоростью speed_max внутри зоны (стабильно,
+                              # независимо от скорости pushing); speed_min здесь не используется.
+
+[zoom]
+# step = 1.1                  # множитель за одно нажатие клавиши (1.1 = 10% за нажатие)
+# trackpad_speed = 1.0        # множитель скорости масштабирования сведением пальцев на тачпаде
+# mouse_speed = 1.0           # множитель скорости масштабирования колесом мыши
+# touch_speed = 1.0           # множитель скорости жестов масштабирования на сенсорном экране
+# fit_padding = 80.0          # отступ в пикселях видимой области для масштабирования "вписать" (пространство экрана)
+# reset_on_new_window = true  # анимировать масштаб至 1.0 при появлении нового окна
+                              # (false = сохранить текущий масштаб, только панорамировать)
+# reset_on_activation = true  # анимировать масштаб至 1.0, когда окно за пределами экрана
+                              # запрашивает фокус
+                              # (false = сохранить текущий масштаб, только панорамировать)
+
+[snap]
+# enabled = true               # магнитное прилипание к краям при перетаскивании окна
+# gap = 12.0                   # зазор между прилипшими окнами (пиксели холста)
+# distance = 24.0              # порог активации (пиксели экрана от края)
+# break_force = 32.0           # пиксели экрана, чтобы оторваться от прилипания
+# corners = false              # также выравнивать углы (параллельные края выравниваются: верх-к-верху, лево-к-леву)
+# centers = false              # также выравнивать центры (средние точки выравниваются по оси перемещения)
+
+[decorations]
+# bg_color = "#303030"           # фон заголовка (по умолчанию: темно-серый)
+# fg_color = "#FFFFFF"           # цвет текста заголовка + кнопки закрытия × (по умолчанию: белый)
+# corner_radius = 10             # радиус скругления углов окна
+# shadow = true                  # тень под декорациями окна
+
+# # Текст заголовка SSD (Server-Side Decorations). Шрифт определяется через fontconfig — установите
+# # пакет `adwaita-fonts` для внешнего вида по умолчанию; иначе будет использован generic sans.
+# title_bar_height = 25          # высота заголовка SSD в пикселях (по умолчанию: 25)
+# font = "Adwaita Sans"          # семейство шрифтов текста заголовка
+# font_size = 11                 # размер шрифта заголовка в пунктах (по умолчанию: 11)
+# font_weight = "medium"         # thin/extralight/light/regular/medium/
+                                 # semibold/bold/extrabold/black (по умолчанию: medium)
+# title_align = "center"         # "left" или "center" (по умолчанию: center). "center"
+                                 # центрирует короткие заголовки и выравнивает по левому краю +
+                                 # добавляет многоточие для длинных
+
+# # Режим декораций для окон без правила:
+# #   "client"  — CSD: клиент рисует свой собственный заголовок (по умолчанию)
+# #   "minimal" — SSD: без заголовка; тень, углы и рамка все еще применяются через [decorations] + правила для окон
+# #   "none"    — чистая поверхность клиента: композитор не добавляет никаких элементов; правила рамки/углов/тени для отдельных окон игнорируются
+# # "server" (заголовок driftwm) намеренно не разрешен как глобальное значение по умолчанию: многие тулкиты (GTK, Electron)
+# # игнорируют xdg-decoration и продолжают рисовать CSD, создавая смещенный двойной заголовок. Используйте его для конкретных приложений через
+# # [[window_rules]].
+# default_mode = "client"
+
+# # Рамки применяются к режимам "client", "server" и "minimal". Режим "none" не имеет
+# # рамки, если она не установлена для конкретного приложения в [[window_rules]].
+# border_width = 0               # пиксели; 0 отключает рамку
+# border_color = "#303030"       # рамка неактивного окна (по умолчанию: темно-серый)
+# border_color_focused = "#303030"  # рамка активного окна. По умолчанию такая же, как выше —
+                                    # установите другой цвет, чтобы получить индикатор фокуса.
+
+[effects]
+# blur_radius = 2                # количество проходов down+up алгоритма Kawase (по умолчанию: 2)
+# blur_strength = 1.1            # разброс текселей за проход (по умолчанию: 1.1)
+# animate_blur_fps = 20          # частота обновления размытия под анимированными обоями (0-144, по умолчанию
+                                 # 20; 0 = выкл, замораживает эффект матового стекла, чтобы он перестал повторно сэмплировать
+                                 # обои). Фон размывается один раз в общую тексту全长ого вывода,
+                                 # и каждое окно вырезает свой прямоугольник из нее, поэтому нагрузка остается постоянной
+                                 # при добавлении окон; окно, находящееся поверх других окон, возвращается
+                                 # к точному поблочному размытию с той же частотой. Анимированные обои
+                                 # меняются медленно, поэтому частота значительно ниже частоты обновления монитора все еще выглядит непрерывной
+                                 # сквозь матовое стекло. Движения камеры форсируют обновление.
+
+[background]
+# # Пять типов: "default" (встроенная сетка точек — по умолчанию), "shader", "tile",
+# # "wallpaper", "none". Для shader/tile/wallpaper, `path` является источником.
+type = "wallpaper"
+path = "~/.wallpaper/bg0.jpg" 
+# # Пример:
+# # type = "shader"  # процедурный GLSL (прокручивается вместе с холстом)
+# # path = "/usr/local/share/driftwm/wallpapers/animated/fast_smoke.glsl"
+# #
+# # type = "tile"  # изображение, повторяемое по всему холсту
+# # path = "~/Pictures/Wallpapers/tile.png"
+# #
+# # type = "wallpaper"  # одиночное изображение, закрепленное в видимой области (не прокручивается/не масштабируется)
+# # path = "~/Pictures/Wallpapers/wallpaper.jpg"
+# #
+# # type = "none"  # не рендерить встроенный фон (path игнорируется), так что
+# #                # демон обоев wlr-layer-shell (swaybg, swww, mpvpaper для live video)
+# #                # становится обоями. Запустите его самостоятельно; см. docs/shaders.md.
+
+# # "shader" также может сэмплировать изображение через `texture` (привязано к
+# # сэмплеру `tex` шейдера) — процедурный эффект *на* вашем изображении. См. docs/shaders.md.
+# # Пример: шейдер, сэмплирующий изображение
+# # type = "shader"
+# # path = "/usr/local/share/driftwm/wallpapers/textured/ripple.glsl"
+# # texture = "~/Pictures/Wallpapers/photo.jpg"
+
+# # Только для режима tile: зеркальное отражение изображения (блок 2×2 с отражением), чтобы края
+# # несвязного изображения всегда стыковались с отражением — не видно швов плитки. Также дает
+# # калейдоскопический/симметричный вид. Не влияет на другие типы фона. Только для одиночных изображений;
+# # гигапиксельные пирамидальные TIFF не отражаются (отразите источник заранее).
+# mirror_tile = false
+
+# # Запечь тяжелый статический шейдер в текстуру один раз, а затем панорамировать её — так он панорамируется
+# # так же дешево, как изображение, вместо пересчета каждый кадр.
+# # CORRECT только для шейдеров, которые жестко скользят вместе с камерой: u_camera используется
+# # один раз, в полном масштабе, как единственный термин камеры. В GLSL:
+# #     vec2 canvas = v_coords * size + u_camera;   // панорамирование сдвигает изображение 1:1
+# # Параллакс (u_camera * factor) отрендерится НЕПРАВИЛЬНО; анимированные (u_time) и
+# # зависящие от зума (u_zoom) шейдеры никогда не кэшируются и рендерятся в реальном времени.
+# cache_shader = false
+# # Учитывать альфа-канал вывода шейдера, чтобы прозрачные пиксели показывали то, что находится
+# # под фоном — например, поверхность Background wlr-layer-shell от внешнего движка обоев.
+# # Форсирует шейдер на живой путь рендеринга, поэтому
+# # cache_shader не действует, пока эта опция включена. Фоновые изображения игнорируют её:
+# # tile/wallpaper PNG с альфа-каналом становятся прозрачными автоматически.
+# # См. docs/shaders.md.
+# transparent_shader = false
+# # Потолок памяти (МБ), общий для cache_shader и обоев gigapixel-TIFF,
+# # с вытеснением LRU (Least Recently Used). Увеличьте для более четкого отображения при повторных обращениях
+# # на больших / HiDPI дисплеях; уменьшите на машинах с ограниченной памятью (слишком низкое значение
+# # просто сделает фон более размытым).
+# cache_budget_mb = 128
+
+# [bindings]
+# # Отказаться от встроенных привязок по умолчанию по категориям, чтобы начать с чистого листа.
+# # Обычно ваши записи в [keybindings]/[mouse]/[gestures] объединяются со
+# # встроенными (используйте `= "none"` для удаления одной конкретной привязки). Перечисление категории
+# # здесь удаляет ВСЕ привязки по умолчанию этой категории, оставляя только ваши собственные.
+# # Категории: "keys", "mouse", "gestures".
+# disable_defaults = []
+# # Пример: использовать свою схему клавиатуры, сохранить привязки мыши и жестов по умолчанию
+# # disable_defaults = ["keys"]
+
+[keybindings]
+# # Привязки клавиатуры: "Modifier+...+Keysym" = "action [arg]"
+# # Объединяется с настройками по умолчанию. Используйте "none" для отвязки.
+# # "mod" раскрывается в mod_key. Литеральные модификаторы: alt, super, ctrl, shift.
+# # Keysym — имена XKB (без учета регистра): return, tab, up, a, equal и т.д.
+# # Чистая комбинация модификаторов (например, "alt+shift") является tap-привязкой (срабатывает при отпускании комбинации; см. [input.keyboard] options).
+# #
+# # Действия:
+# #   exec <cmd>              — запустить приложение (показывает курсор загрузки до появления окна, выходит из полноэкранного режима)
+# #   exec-terminal           — запустить автоматически определенный терминал (см. [keybindings] ниже; переопределите через $TERMINAL)
+# #   exec-launcher           — запустить автоматически определенную панель запуска приложений (см. [keybindings] ниже; переопределите через $LAUNCHER)
+# #   spawn <cmd>             — выполнить команду без курсора загрузки и выхода из полноэкранного режима (переключатели, OSD, скриншоты)
+# #   close-window            — закрыть сфокусированное окно
+# #   nudge-window <dir>      — сдвинуть сфокусированное окно на nudge_step пикселей
+# #   pan-viewport <dir>      — панорамировать камеру на pan_step пикселей
+# #   center-window           — центрировать вид на сфокусированном окне + сбросить масштаб
+# #   focus-center            — сфокусироваться + центрировать на окне под указателем + сбросить масштаб
+# #   center-nearest <dir>    — перейти к ближайшему окну в направлении
+# #   cycle-windows forward   — циклическое переключение окон в стиле Alt-Tab
+# #   cycle-windows backward  — обратное циклическое переключение
+# #   home-toggle             — переключение между текущей позицией и началом координат
+# #   zoom-in / zoom-out      — шаг масштабирования
+# #   zoom-reset              — масштаб至 1.0
+# #   go-to <x> <y>           — переместить камеру в позицию на холсте (закладки, Y-up)
+# #   zoom-to-fit             — вписать все окна в видимую область
+# #   zoom-to-fit-snapped     — вписать только кластер прилипания сфокусированного окна
+# #   toggle-fullscreen       — переключить полноэкранный режим сфокусированного окна
+# #   fit-window              — переключить максимизацию: центрирует + сбрасывает масштаб + заполняет видимую область; восстановление только изменяет размер обратно
+# #   fit-window-snapped      — fit-window для всего кластера прилипания сфокусированного окна
+# #   toggle-pin-to-screen    — закрепить/открепить сфокусированное окно к экрану (игнорирует панорамирование/масштаб, плавает поверх)
+# #   reload-config           — горячая перезагрузка файла конфигурации
+# #   toggle-cursor-pan       — переключить панорамирование курсором у края (см. [navigation.edge_pan])
+# #   quit                    — выйти из композитора
+# #   send-to-output <dir>    — переместить сфокусированное окно на соседний монитор
+# #   send-cursor-to-output <dir>  — переместить курсор на соседний монитор
+# #   switch-layout <target>  — циклическое переключение раскладки клавиатуры: next, prev или индекс с 0
+# #   none                    — отвязать эту комбинацию клавиш
+# #
+# # Направления: up, down, left, right, up-left, up-right, down-left, down-right
+"mod+escape"= "quit"
+"mod+return" = "exec kitty"
+"mod+space" = "exec rofi -show drun"
+"mod+q" = "close-window"
+# "mod+e" = "toggle-cursor-pan"     # переключить панорамирование курсором у края (см. [navigation.edge_pan])
+# "mod+f" = "toggle-fullscreen"
+# "mod+m" = "fit-window"
+# "mod+shift+m" = "fit-window-snapped"
+# "mod+t" = "toggle-pin-to-screen"
+# "mod+c" = "center-window"
+# "mod+x" = "focus-center"
+"mod+a" = "home-toggle"
+"mod+up" = "center-nearest up"
+"mod+k" = "center-nearest up"
+"mod+down" = "center-nearest down"
+"mod+j" = "center-nearest down"
+"mod+left" = "center-nearest left"
+"mod+h" = "center-nearest left"
+"mod+right" = "center-nearest right"
+"mod+l" = "center-nearest right"
+# "mod+shift+up" = "nudge-window up"
+# "mod+shift+down" = "nudge-window down"
+# "mod+shift+left" = "nudge-window left"
+# "mod+shift+right" = "nudge-window right"
+# "mod+ctrl+up" = "pan-viewport up"
+# "mod+ctrl+down" = "pan-viewport down"
+# "mod+ctrl+left" = "pan-viewport left"
+# "mod+ctrl+right" = "pan-viewport right"
+# "alt+tab" = "cycle-windows forward"
+# "alt+shift+tab" = "cycle-windows backward"
+# "mod+equal" = "zoom-in"
+# "mod+minus" = "zoom-out"
+# "mod+0" = "zoom-reset"
+# "mod+z" = "zoom-reset"
+# "mod+w" = "zoom-to-fit"
+# "mod+shift+w" = "zoom-to-fit-snapped"
+# "mod+1" = "go-to -1750 1750"     # закладка верх-лево
+# "mod+2" = "go-to 1750 1750"      # закладка верх-право
+# "mod+3" = "go-to 1750 -1750"     # закладка низ-право
+# "mod+4" = "go-to -1750 -1750"    # закладка низ-лево
+# "mod+alt+up" = "send-to-output up"        # переместить окно на монитор выше
+# "mod+alt+down" = "send-to-output down"
+# "mod+alt+left" = "send-to-output left"
+# "mod+alt+right" = "send-to-output right"
+# "mod+l" = "spawn swaylock -f -c 000000 -kl"
+# "mod+ctrl+shift+q" = "quit"
+# "XF86AudioRaiseVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+# "XF86AudioLowerVolume" = "spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+# "XF86AudioMute" = "spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+# "XF86MonBrightnessUp" = "spawn brightnessctl set +5%"
+# "XF86MonBrightnessDown" = "spawn brightnessctl set 5%-"
+# "XF86AudioPlay" = "spawn playerctl play-pause"
+# "XF86AudioPause" = "spawn playerctl play-pause"
+# "XF86AudioNext" = "spawn playerctl next"
+# "XF86AudioPrev" = "spawn playerctl previous"
+# "XF86AudioStop" = "spawn playerctl stop"
+# "Print" = "spawn grim - | wl-copy"
+# "shift+Print" = "spawn grim -g \"$(slurp -d)\" - | wl-copy"
+# # Пример: встроенный захват окна (изолированное окно + тень) в буфер обмена
+# # "ctrl+Print" = "spawn driftwm msg screenshot window -o - | wl-copy"
+# # Пример: tap-привязка — чистая комбинация модификаторов, срабатывает при отпускании без нажатия других клавиш
+# # "alt+shift" = "switch-layout next"
+
+[mouse]
+# # Если true (по умолчанию), перетаскивание края или угла окна изменяет его размер через
+# # невидимую границу изменения размера (рамка SSD или край CSD). Установите false, чтобы сделать эту
+# # границу инертной — изменение размера только через явные привязки (например, alt+right) или
+# # жесты.
+# resize_on_border = true
+
+# # Если true, изменение размера окна путем перетаскивания его края (рамка SSD или CSD)
+# # распространяется на каждое окно, соединенное с ним через прилипание.
+# # Изменение размера через привязки/жесты не затрагивается — явно привяжите `resize-window-snapped`,
+# # если хотите изменение размера с учетом кластера и там.
+# decoration_resize_snapped = false
+
+# # Если true, максимизация/восстанов Maximization initiated via window decoration (кнопка максимизации CSD,
+# # двойной клик по заголовку SSD или xdg/foreign-toplevel set_maximized)
+# # распространяется на каждое окно, соединенное через прилипание.
+# # Fit через привязки/жесты не затрагивается — явно привяжите `fit-window-snapped`,
+# # если хотите fit с учетом кластера и там.
+# decoration_fit_snapped = false
+
+# # Привязки мыши: "Modifier+...+Trigger" = "action"
+# # Контекстно-зависимые: on-window (на окне), on-canvas (на холсте), anywhere (везде).
+# # Сначала проверяется конкретный контекст, затем "anywhere" как запасной вариант.
+# # Клик для фокуса и клики по декорациям SSD всегда жестко закодированы.
+# # Триггеры: left, right, middle (кнопки), trackpad-scroll, wheel-scroll,
+# # wheel-up, wheel-down. Триггеры wheel-up/wheel-down срабатывают один раз за
+# # дискретный щелчок колеса и могут выполнять любое действие, например, регулировку громкости при mod+shift+scroll.
+# # Объединяется с настройками по умолчанию. Используйте "none" для отвязки.
+# #
+# # Действия мыши: move-window, move-snapped-windows, resize-window,
+# # resize-window-snapped, pan-viewport, zoom, center-nearest
+# # Любое действие с клавиатуры также работает для триггеров кнопок: exec, close-window, toggle-fullscreen и т.д.
+# #
+# # move-window / resize-window действуют только на сфокусированное окно.
+# # move-snapped-windows / resize-window-snapped также перемещают каждое окно,
+# # соединенное с сфокусированным через прилипание
+
+[mouse.on-window]
+# "alt+left" = "move-window"
+# "alt+shift+left" = "move-snapped-windows"
+# "alt+right" = "resize-window"
+# "alt+shift+right" = "resize-window-snapped"
+# "alt+middle" = "fit-window"
+# "alt+shift+middle" = "fit-window-snapped"
+# "mod+middle" = "toggle-fullscreen"
+
+[mouse.on-canvas]
+# "left" = "pan-viewport"            # обычный левый клик по пустому холсту → панорамирование
+# "trackpad-scroll" = "pan-viewport" # прокрутка тачпада по пустому холсту → панорамирование
+# "wheel-scroll" = "zoom"            # колесо мыши по пустому холсту → масштабирование
+
+[mouse.anywhere]
+# "mod+left" = "pan-viewport"
+# "mod+ctrl+left" = "center-nearest" # направление определяется дельтой перетаскивания
+# "mod+trackpad-scroll" = "pan-viewport"
+# "mod+wheel-scroll" = "zoom"
+
+[gestures]
+# # Пороги жестов — настройте под размер вашего тачпада.
+# swipe_threshold = 12.0        # накопленное расстояние в пикселях до срабатывания направленного свайпа
+# pinch_in_threshold = 0.85     # масштаб, ниже которого срабатывает сведение пальцев (1.0 = нет сведения)
+# pinch_out_threshold = 1.15    # масштаб, выше которого срабатывает разведение пальцев (1.0 = нет разведения)
+
+# # Привязки жестов: "Modifier+N-finger-<type>" = "action"
+# # Контекстно-зависимые: on-window, on-canvas, anywhere.
+# # Несвязанные жесты передаются сфокусированному приложению.
+# # "none" отвязывает (предотвращает fallback на anywhere, все еще передает приложению).
+# #
+# # Типы жестов:
+# #   N-finger-swipe            — непрерывный ИЛИ пороговый (действие определяет поведение)
+# #   N-finger-swipe-up/down/left/right — только пороговый, проверяется перед fallback на swipe
+# #   3-finger-doubletap-swipe  — непрерывный ИЛИ пороговый (касание 3 пальцами, затем свайп)
+# #   N-finger-pinch            — только непрерывный (используйте pinch-in/out для дискретных)
+# #   N-finger-pinch-in/out     — только пороговый
+# #   N-finger-hold             — только пороговый (срабатывает при отпускании)
+# #
+# # Непрерывные действия: pan-viewport, zoom, move-window, resize-window, resize-window-snapped
+# # Пороговые действия: center-nearest, center-window, home-toggle, zoom-to-fit, zoom-to-fit-snapped, fit-window, fit-window-snapped, exec <cmd> и т.д.
+
+[gestures.on-window]
+# "alt+3-finger-swipe" = "resize-window"
+# "alt+shift+3-finger-swipe" = "resize-window-snapped"
+# "3-finger-doubletap-swipe" = "move-window"
+# "alt+2-finger-pinch-in" = "fit-window"
+# "alt+2-finger-pinch-out" = "fit-window"
+# "alt+shift+2-finger-pinch-in" = "fit-window-snapped"
+# "alt+shift+2-finger-pinch-out" = "fit-window-snapped"
+# "alt+3-finger-pinch-in" = "toggle-fullscreen"
+# "alt+3-finger-pinch-out" = "toggle-fullscreen"
+
+[gestures.on-canvas]
+# "2-finger-pinch" = "zoom"
+
+[gestures.anywhere]
+# "3-finger-swipe" = "pan-viewport"         # непрерывный (dx/dy за кадр)
+# "4-finger-swipe" = "center-nearest"       # пороговый (накопление, определение направления, однократное срабатывание)
+# "mod+3-finger-swipe" = "center-nearest"   # mod заставляет 3-пальцевый свайп тоже навигировать
+# # Пример: переопределения по направлениям (только пороговые, проверяются перед fallback на swipe)
+# # "4-finger-swipe-up" = "exec brightnessctl set +5%"
+# # "4-finger-swipe-down" = "exec brightnessctl set 5%-"
+# "mod+2-finger-pinch" = "zoom"             # mod переопределяет передачу приложению
+# "3-finger-pinch" = "zoom"                 # непрерывный
+# "4-finger-pinch-in" = "zoom-to-fit"       # пороговый
+# "mod+4-finger-pinch-in" = "zoom-to-fit-snapped"
+# "4-finger-pinch-out" = "home-toggle"      # пороговый
+# "mod+3-finger-pinch-in" = "zoom-to-fit"
+# "mod+3-finger-pinch-out" = "home-toggle"
+# "4-finger-hold" = "center-window"         # срабатывает при отпускании
+# "mod+3-finger-hold" = "center-window"
+
+[xwayland]
+# # Поддержка X11 через xwayland-satellite. driftwm eagerly запускает satellite at
+# # startup, экспортирует DISPLAY=:N, и приложения X11 подключаются прозрачно. Если binary
+# # не найден, поддержка X11 отключается с предупреждением; everything
+# # else still runs.
+# enabled = true                  # по умолчанию: true
+# path    = "xwayland-satellite"  # путь к binary xwayland-satellite (работает поиск через $PATH)
+
+[backend]
+# # Особенности стабильности оборудования. Все по умолчанию false (opt-in).
+# # Включите их, если испытываете мерцание, сбои или проблемы с рендерингом.
+# # Особенно полезно на GPU NVIDIA с проприетарными драйверами.
+# # Примечание: Эти флаги должны быть установлены перед запуском driftwm. Их изменение требует перезапуска.
+# # Для дополнительных настроек, специфичных для NVIDIA, установите these environment variables in your
+# # session wrapper script or shell profile before starting driftwm:
+# #   export SMITHAY_USE_LEGACY=1          # Use legacy DRM API instead of atomic modesetting
+# #   export __GL_GSYNC_ALLOWED=0
+# #   export __GL_VRR_ALLOWED=0
+# #   export __GL_MaxFramesAllowed=1
+# #   export NVD_BACKEND=direct
+# wait_for_frame_completion = false  # Force GPU-fence wait before every page flip
+                                     # (already done automatically when smithay reports
+                                     # needs_sync — typical case on NVIDIA. Set true
+                                     # only if you still see flicker after defaults.)
+# disable_direct_scanout = false     # Force EGL composition (disable direct scanout)
+# disable_hardware_cursor = false    # Composite the cursor into the frame instead of
+                                     # using the KMS cursor plane, while keeping direct
+                                     # scanout for fullscreen apps. Fixes a stuttering /
+                                     # tearing hardware cursor on discrete NVIDIA GPUs.
+# max_capture_fps = 0                # Cap FPS delivered to continuous screen-capture
+                                     # clients (recorders / casts). 0 = unlimited. Each
+                                     # captured frame forces a full-scene re-composite
+                                     # that competes with a fullscreen app behind it; a
+                                     # cap (e.g. 30 or 60) trims that overhead while
+                                     # gaming + streaming. One-shot screenshots (grim)
+                                     # are never throttled.
+
+[output.outline]
+# color = "#ffffff"           # цвет контура для видовых областей других мониторов
+# thickness = 1               # пиксели (0 чтобы отключить)
+# opacity = 0.5               # 0.0–1.0
+
+# ## Мониторы (Outputs)
+# # Конфигурация для каждого монитора. Каждая запись [[outputs]] сопоставляется по имени коннектора.
+# # Найдите имена коннекторов с помощью wlr-randr или проверьте логи driftwm при запуске.
+# # Мониторы без совпадающей записи по умолчанию имеют масштаб 1.0.
+# # Бэкенд Winit игнорирует entries [[outputs]].
+# #
+# # `mode` принимает "preferred", "WxH" или "WxH@Hz". Bare "WxH" только selects a
+# # mode the monitor already advertises — if none matches, it keeps the preferred
+# # mode (logged as a warning, not an error). "WxH@Hz" forces that exact mode,
+# # synthesizing a CVT modeline when the monitor doesn't advertise it (intended
+# # for CRTs or forcing non-standard modes; may be rejected by some panels).
+# #
+# # Пример:
+# # [[outputs]]
+# # name = "eDP-1"           # имя коннектора (обязательно)
+# # scale = 1.5              # fractional scale (по умолчанию: 1.0)
+# # transform = "normal"     # normal, 90, 180, 270, flipped, flipped-90, flipped-180, flipped-270
+# # position = "auto"        # "auto" (слева-направо) или [x, y] в координатах layout
+# # mode = "preferred"       # "preferred", "1920x1080" или "2560x1440@144"
+# #
+# # [[outputs]]
+# # name = "HDMI-A-1"
+# # scale = 1.0
+# # mode = "1920x1080@60"
+
+# ## Правила окон
+# # Правила окон: сопоставляют окна и применяют переопределения для каждого окна.
+# # ВСЕ совпадающие правила объединяются в порядке конфигурации (поздние правила переопределяют ранние
+# # для скалярных полей; boolean flags are sticky-on). This lets you compose
+# # rules — e.g. one rule sets blur=true, a later one adds opacity=0.85.
+# #
+# # Критерии сопоставления (требуется хотя бы один; all specified must match):
+# #   app_id     — Wayland app_id. Приложения X11, проксируемые через xwayland-satellite, прибывают
+# #                с app_id, установленным из WM_CLASS instance (обычно в нижнем регистре).
+# #   title      — заголовок окна
+# #
+# # Синтаксис шаблонов (применяется ко всем полям сопоставления):
+# #   Plain string  — точное совпадение: "kitty"
+# #   Glob          — wildcard *:  "steam_app_*"
+# #   Regex         — обернуть в /…/: "/^steam_app_\\d+$/"
+# #
+# # Чтобы найти идентификаторы окна, выполните while the window is open:
+# #   `driftwm msg state`
+# #
+# # Поля эффектов:
+# #   position   — координаты [x, y] (центр окна, Y-up). Координаты холста, или
+# #                относительно монитора (начало = центр монитора), когда pinned_to_screen.
+# #   size       — [width, height] начальные размеры окна (one-shot; user/app can resize after)
+# #   widget     — true: закреплено (неподвижно), below normal windows, excluded from
+# #                navigation and alt-tab (по умолчанию: false)
+# #   pinned_to_screen — true: lock the window to the output's screen space —
+# #                ignores pan/zoom, floats above normal windows (PiP, toolbars).
+# #                `position` becomes output-relative; movable unless widget = true.
+# #                Toggle live with `toggle-pin-to-screen` (Mod+T). (по умолчанию: false)
+# #   decoration — overrides [decorations] default_mode for matched windows.
+# #                Omit to inherit default_mode. Values:
+# #                "client":  CSD — client's own titlebar
+# #                "server":  SSD — driftwm's titlebar
+# #                "minimal": SSD — no titlebar, just shadow + corners + border
+# #                            (this is the mode for chrome-on-borderless widgets;
+# #                            border_width / corner_radius / shadow rules apply)
+# #                "none":    bare client surface — compositor adds zero chrome,
+# #                            and per-window border_width / corner_radius /
+# #                            shadow rules are ignored. Use "minimal" if you
+# #                            want chrome without a titlebar.
+# #   blur       — true: blur background behind this window (по умолчанию: false)
+# #   opacity    — 0.0–1.0: transparency окна (по умолчанию: 1.0, fully opaque)
+# #   border_width         — per-window border width override (px). Set to 0 to
+# #                          disable border on a window even when [decorations]
+# #                          border_width > 0. Ignored for decoration = "none".
+# #   border_color         — per-window unfocused border color hex (e.g. "#5c5c5c").
+# #   border_color_focused — per-window focused border color hex.
+# #   corner_radius        — per-window corner radius override (px). Affects
+# #                          content clip, border shape, and shadow. Ignored for
+# #                          decoration = "none".
+# #   shadow               — per-window shadow toggle. Overrides [decorations]
+# #                          shadow. Ignored for decoration = "none".
+# #   output     — output name (e.g. "DP-1") this window fullscreens onto. Takes
+# #                precedence over the output the client itself requests. Omit to
+# #                honor the client's request, then the active output. Find names
+# #                under `outputs.*` in `driftwm msg state`. (по умолчанию: unset)
+# #   pass_keys  — controls which compositor keybindings are forwarded to the app:
+# #                  pass_keys = true — forward ALL keys (game-friendly)
+# #                  pass_keys = ["mod+q", "ctrl+q"] — forward ONLY these combos; all other compositor shortcuts stay active
+# #                  pass_keys = false / omit — compositor handles everything (по умолчанию)
+# #                  VT switching (Ctrl+Alt+F1–F12) — always stays in the compositor
+# #
+# # Layer-shell surfaces (panels, notifications, bars like waybar):
+# # `decoration` is ignored — layers have no decoration mode. Chrome
+# # (border_width, corner_radius, shadow) is field-by-field opt-in on the rule
+# # and does NOT inherit from [decorations]. Without explicit values on the
+# # rule, a layer surface has no border, no shadow, and no corner clip.
+# #
+# # Пример: Desktop widget (pinned clock/calendar)
+# # [[window_rules]]
+# # app_id     = "my-widget"
+# # position   = [0, 0]
+# # widget     = true
+# # decoration = "none"
+# #
+# # Пример: Picture-in-Picture, pinned to the screen, stays put while you pan/zoom
+# # [[window_rules]]
+# # title            = "Picture-in-Picture"
+# # pinned_to_screen = true
+# # position         = [0, -300]   # output-relative: 300px below center; movable, drop to center on the output
+# #
+# # Пример: Blurred transparent terminal
+# # [[window_rules]]
+# # app_id  = "kitty"
+# # opacity = 0.85
+# # blur    = true
+# #
+# # Пример: Game, pass ALL keys to the app (mod+q, ctrl+q etc. reach the game)
+# # [[window_rules]]
+# # app_id    = "steam_app_*"
+# # pass_keys = true
+# #
+# # Пример: Game, only let ctrl+q through, keep everything else (mod+q still closes)
+# # [[window_rules]]
+# # app_id    = "factorio"
+# # pass_keys = ["ctrl+q"]
+# #
+# # Пример: Regex match, any Steam game app
+# # [[window_rules]]
+# # app_id    = "/^steam_app_\\d+$/"
+# # pass_keys = true
+# #
+# # Пример: Always open this game fullscreen on a specific monitor
+# # [[window_rules]]
+# # app_id = "steam_app_*"
+# # output = "DP-1"
+# #
+# # Пример: Compose rules, blur from first rule, opacity from second (both apply)
+# # [[window_rules]]
+# # app_id = "Alacritty"
+# # blur   = true
+# #
+# # [[window_rules]]
+# # app_id  = "Alacritty"
+# # opacity = 0.9
+# #
+# # Пример: Iced/libcosmic utility windows that share the main window's app_id
+# # [[window_rules]]
+# # title  = "winit window"
+# # widget = true

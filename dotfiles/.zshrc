@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -103,12 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# NPM global bin (added by Qwen Code installer)
-export PATH="$HOME/.npm-global/bin:$PATH"
+export no_proxy="localhost,127.0.0.1,::1"
+export NO_PROXY="localhost,127.0.0.1,::1"
 
-# opencode
-export PATH=/home/techima/.opencode/bin:$PATH
-
-# ssh-agent
-eval "$(ssh-agent -s > /dev/null)"
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+#ssh-sock-agent
+# eval "$(ssh-agent -s)" > /dev/null

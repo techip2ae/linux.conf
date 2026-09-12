@@ -168,7 +168,7 @@ layout {
         proportion 0.8
     }
 
-    default-column-width { proportion 0.8; }
+    default-column-width { proportion 1.0; }
 
     focus-ring {
         off
@@ -320,4 +320,12 @@ gestures {
 cursor {
     xcursor-theme "Moga-Neon-Purple"
     xcursor-size 26
+}
+
+//#########//
+// Display //
+//#########//
+
+output "DP-0" {
+    scale 1 
 }
