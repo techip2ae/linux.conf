@@ -6,7 +6,7 @@
 > `stow -t ~ --adopt .`
 
 
-GUI file manager:       `sudo pacman -S thunar` 
+GUI file manager:       `sudo pacman -S thunar gvfs-mtp libmtp tumbler ffmpegthumbnailer poppler-glib` 
 TUI file manager:       `sudo pacman -S yazi`   
 gvim:                   `sudo pacman -S gvim`  
 launcher:               `sudo pacman -S rofi`  

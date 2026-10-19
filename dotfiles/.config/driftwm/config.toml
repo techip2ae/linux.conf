@@ -35,8 +35,12 @@ window_placement = "auto"
 
 # # Команды для запуска при старте (после установки WAYLAND_DISPLAY).
 # # Каждая запись передается в sh -c, поэтому работает полный синтаксис оболочки (конвейеры, &&, переменные окружения).
-autostart = ["waybar"]
-# #
+autostart = [
+    "waybar",
+    "wl-paste --type text --watch cliphist store",
+    "wl-paste --type image --watch cliphist store",
+    ]
+
 # # Запуск driftwm как сеанса systemd (через driftwm-session или менеджер дисплея)
 # # также запускает элементы автозапуска XDG (~/.config/autostart, /etc/xdg/autostart)
 # # в дополнение к списку autostart выше. Чтобы отключить это:
@@ -52,7 +56,7 @@ autostart = ["waybar"]
 # # MOZ_ENABLE_WAYLAND = "1"
 
 [input.keyboard]
-layout = "fi"              # Раскладка XKB (например, "us,ru" для нескольких раскладок)
+layout = "fi, ru"              # Раскладка XKB (например, "us,ru" для нескольких раскладок)
 # remember_layout_per_window = false  # для настроек с несколькими раскладками
 # variant = ""               # Вариант XKB (например, "dvorak" или "," для двух вариантов по умолчанию)
 # options = ""               # Опции XKB (например, "grp:win_space_toggle" для переключения раскладки по Super+Space)
@@ -173,10 +177,9 @@ trackpad_speed = 1.5        # множитель скорости панорам
                                     # установите другой цвет, чтобы получить индикатор фокуса.
 
 [effects]
-# blur_radius = 2                # количество проходов down+up алгоритма Kawase (по умолчанию: 2)
-# blur_strength = 1.1            # разброс текселей за проход (по умолчанию: 1.1)
-# animate_blur_fps = 20          # частота обновления размытия под анимированными обоями (0-144, по умолчанию
-                                 # 20; 0 = выкл, замораживает эффект матового стекла, чтобы он перестал повторно сэмплировать
+blur_radius = 6                  # количество проходов down+up алгоритма Kawase (по умолчанию: 2)
+blur_strength = 1.1              # разброс текселей за проход (по умолчанию: 1.1)
+animate_blur_fps = 30            # частота обновления размытия под анимированными обоями (0-144, по умолчанию
                                  # обои). Фон размывается один раз в общую тексту全长ого вывода,
                                  # и каждое окно вырезает свой прямоугольник из нее, поэтому нагрузка остается постоянной
                                  # при добавлении окон; окно, находящееся поверх других окон, возвращается
@@ -286,13 +289,15 @@ path = "~/.wallpaper/bg0.jpg"
 # #   none                    — отвязать эту комбинацию клавиш
 # #
 # # Направления: up, down, left, right, up-left, up-right, down-left, down-right
+"mod+v" = "spawn sh -c 'cliphist list | rofi -dmenu | cliphist decode | wl-copy'"
 "mod+escape"= "quit"
 "mod+return" = "exec kitty"
 "mod+space" = "exec rofi -show drun"
+"mod+e" = "exec Thunar"
 "mod+q" = "close-window"
 # "mod+e" = "toggle-cursor-pan"     # переключить панорамирование курсором у края (см. [navigation.edge_pan])
-# "mod+f" = "toggle-fullscreen"
-# "mod+m" = "fit-window"
+"mod+f" = "toggle-fullscreen"
+"mod+m" = "fit-window"
 # "mod+shift+m" = "fit-window-snapped"
 # "mod+t" = "toggle-pin-to-screen"
 # "mod+c" = "center-window"
@@ -316,6 +321,7 @@ path = "~/.wallpaper/bg0.jpg"
 # "mod+ctrl+right" = "pan-viewport right"
 # "alt+tab" = "cycle-windows forward"
 # "alt+shift+tab" = "cycle-windows backward"
+"alt+shift" = "switch-layout next"
 # "mod+equal" = "zoom-in"
 # "mod+minus" = "zoom-out"
 # "mod+0" = "zoom-reset"
@@ -497,9 +503,9 @@ path = "~/.wallpaper/bg0.jpg"
                                      # are never throttled.
 
 [output.outline]
-# color = "#ffffff"           # цвет контура для видовых областей других мониторов
-# thickness = 1               # пиксели (0 чтобы отключить)
-# opacity = 0.5               # 0.0–1.0
+color = "#d44299"           # цвет контура для видовых областей других мониторов
+thickness = 2               # пиксели (0 чтобы отключить)
+opacity = 0.5               # 0.0–1.0
 
 # ## Мониторы (Outputs)
 # # Конфигурация для каждого монитора. Каждая запись [[outputs]] сопоставляется по имени коннектора.
